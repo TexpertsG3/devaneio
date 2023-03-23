@@ -1,5 +1,6 @@
 package br.com.hotel.devaneio.controller;
 
+import br.com.hotel.devaneio.model.Admin;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +27,7 @@ public class HomeController {
 
         return modelAndView;
     }
+
 
 //    @PostMapping("/um")
 //    public String cadastraProdutos(){
