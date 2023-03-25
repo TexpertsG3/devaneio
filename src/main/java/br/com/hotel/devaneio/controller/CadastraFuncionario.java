@@ -1,4 +1,4 @@
-package br.com.hotel.servlet;
+package br.com.hotel.devaneio.controller;
 
 public class CadastraFuncionario {
 

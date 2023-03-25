@@ -1,4 +1,4 @@
-package br.com.hotel.servlet;
+package br.com.hotel.devaneio.controller;
 
 import java.io.IOException;
 
