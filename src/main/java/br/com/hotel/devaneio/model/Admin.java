@@ -1,31 +1,39 @@
 package br.com.hotel.devaneio.model;
 
-//import javax.persistence.Entity;
-//import javax.persistence.EnumType;
-//import javax.persistence.Enumerated;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
-//import javax.persistence.Id;
-//import javax.persistence.Table;
-//
-//
-//@Entity
-//@Table(name = "administrador")
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "administrador")
 public class Admin {
 
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_administrador")
 	private Integer idAdmin;
+	@Column(name = "nome_admin")
 	private String nome;
-	private String email;
+	@Column(name = "senha_admin")
 	private String senha;
-	private Integer idHotel;
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_contato")
+	private Contato contato;
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_endereco")
+	private Endereco endereco;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_hotel")
+	private Hotel hotel;
 
-	public Admin(String nome, String email, String senha, Integer idHotel) {
+	public Admin(String nome, String senha, Contato contato, Endereco endereco, Hotel hotel) {
 		this.nome = nome;
-		this.email = email;
 		this.senha = senha;
-		this.idHotel = idHotel;
+		this.contato = contato;
+		this.endereco = endereco;
+		this.hotel = hotel;
+	}
+
+	public Admin() {
+
 	}
 
 	public Integer getIdAdmin() {
@@ -44,14 +52,6 @@ public class Admin {
 		this.nome = nome;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public String getSenha() {
 		return senha;
 	}
@@ -60,12 +60,28 @@ public class Admin {
 		this.senha = senha;
 	}
 
-	public Integer getIdHotel() {
-		return idHotel;
+	public Contato getContato() {
+		return contato;
 	}
 
-	public void setIdHotel(Integer idHotel) {
-		this.idHotel = idHotel;
+	public void setContato(Contato contato) {
+		this.contato = contato;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+	public Hotel getHotel() {
+		return hotel;
+	}
+
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
 	}
 
 	@Override
@@ -73,9 +89,10 @@ public class Admin {
 		return "Admin{" +
 				"idAdmin=" + idAdmin +
 				", nome='" + nome + '\'' +
-				", email='" + email + '\'' +
 				", senha='" + senha + '\'' +
-				", idHotel=" + idHotel +
+				", contato=" + contato +
+				", endereco=" + endereco +
+				", hotel=" + hotel +
 				'}';
 	}
 }
