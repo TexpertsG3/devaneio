@@ -2,11 +2,10 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Cadastro do Hotel</title>
 </head>
 <body>
     <form th:object="${hotelInputDTO}" action="/hotel/persiste" method="post">
-        Nome: <input th:field="*{nome}" /> <span th:errors="*{nome}"></span> <br />
         Nome: <input th:field="*{nome}" /> <span th:errors="*{nome}"></span> <br />
         CNPJ: <input th:field="*{cnpj}" /> <span th:errors="*{cnpj}"></span> <br />
         Email: <input th:field="*{email}" /> <span th:errors="*{email}"></span> <br />

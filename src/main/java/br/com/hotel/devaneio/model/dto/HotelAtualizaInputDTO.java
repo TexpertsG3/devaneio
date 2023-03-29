@@ -2,7 +2,10 @@ package br.com.hotel.devaneio.model.dto;
 
 import jakarta.validation.constraints.*;
 
-public class HotelInputDTO {
+public class HotelAtualizaInputDTO {
+
+    @NotBlank
+    private Integer id;
     @NotBlank
     private String nome;
     @NotBlank
@@ -31,20 +34,8 @@ public class HotelInputDTO {
     @NotBlank
     private String complemento;
 
-    public HotelInputDTO(String nome, String cnpj, String email, String telefone, String celular, String rua, String bairro,
-                         Integer numero, String cep, String cidade, String uf, String complemento) {
-        this.nome = nome;
-        this.cnpj = cnpj;
-        this.email = email;
-        this.telefone = telefone;
-        this.celular = celular;
-        this.rua = rua;
-        this.bairro = bairro;
-        this.numero = numero;
-        this.cep = cep;
-        this.cidade = cidade;
-        this.uf = uf;
-        this.complemento = complemento;
+    public Integer getId() {
+        return id;
     }
 
     public String getNome() {
@@ -93,5 +84,57 @@ public class HotelInputDTO {
 
     public String getComplemento() {
         return complemento;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
 }

@@ -5,8 +5,16 @@
     <title>Lista de Hotéis Cadastrados</title>
 </head>
 <body>
-  <table>
-    <tr>
+
+
+<button><a th:href="@{/hotel/cadastra}">Clique aqui para cadastrar um novo hotel.</a></button>
+<br><br>
+
+<span th:text="${deletado}"></span>
+<br><br>
+
+  <table th:border="1px">
+    <tr th:bgcolor="grey">
       <td>ID</td>
       <td>Nome</td>
       <td>CNPJ</td>
@@ -35,6 +43,8 @@
       <td th:text="${hotel.cidade}"></td>
       <td th:text="${hotel.uf}"></td>
       <td th:text="${hotel.complemento}"></td>
+      <td><a th:href="@{/hotel/updateForm(id=${hotel.id})}">Alterar</a></td>
+      <td><a th:href="@{/hotel/deleta(id=${hotel.id})}">Excluir</a></td>
     </tr>
   </table>
 </body>

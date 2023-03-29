@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar os dados do hotel</title>
+</head>
+<body>
+<span th:text="${hotel}"></span>
+
+<form th:object="${hotel}" th:action="@{/hotel/atualiza}" method="post">
+    <input type="hidden" name="id" th:value="${hotel.idHotel}">
+    Nome: <input name="nome" th:value="*{dadosHotel.nome}" /> <span th:errors="*{dadosHotel.nome}"></span> <br />
+    CNPJ: <input name="cnpj" th:value="*{dadosHotel.cnpj}" /> <span th:errors="*{dadosHotel.cnpj}"></span> <br />
+    Email: <input name="email" th:value="*{dadosHotel.contato.email}" /> <span th:errors="*{dadosHotel.contato.email}"></span> <br />
+    Telefone: <input name="telefone" th:value="*{dadosHotel.contato.telefone}" /> <span th:errors="*{dadosHotel.contato.telefone}"></span> <br />
+    Celular: <input name="celular" th:value="*{dadosHotel.contato.celular}" /> <span th:errors="*{dadosHotel.contato.celular}"></span> <br />
+    Rua: <input name="rua" th:value="*{dadosHotel.endereco.rua}" /> <span th:errors="*{dadosHotel.endereco.rua}"></span> <br />
+    Bairro: <input name="bairro" th:value="*{dadosHotel.endereco.bairro}" /> <span th:errors="*{dadosHotel.endereco.bairro}"></span> <br />
+    Numero: <input name="numero" th:value="*{dadosHotel.endereco.numero}" /> <span th:errors="*{dadosHotel.endereco.numero}"></span> <br />
+    CEP: <input name="cep" th:value="*{dadosHotel.endereco.cep}" /> <span th:errors="*{dadosHotel.endereco.cep}"></span> <br />
+    Cidade: <input name="cidade" th:value="*{dadosHotel.endereco.cidade}" /> <span th:errors="*{dadosHotel.endereco.cidade}"></span> <br />
+    UF: <input name="uf" th:value="*{dadosHotel.endereco.uf}" /> <span th:errors="*{dadosHotel.endereco.uf}"></span> <br />
+    Complemento: <input name="complemento" th:value="*{dadosHotel.endereco.complemento}" /> <span th:errors="*{dadosHotel.endereco.complemento}"></span> <br /> <br />
+    <input type="submit" value="Atualizar!">
+</form>
+</body>
+</html>

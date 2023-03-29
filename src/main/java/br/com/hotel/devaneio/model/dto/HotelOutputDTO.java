@@ -33,6 +33,7 @@ public class HotelOutputDTO {
         this.complemento = complemento;
     }
 
+
     public Integer getId() {
         return id;
     }
@@ -84,4 +85,5 @@ public class HotelOutputDTO {
     public String getComplemento() {
         return complemento;
     }
+
 }

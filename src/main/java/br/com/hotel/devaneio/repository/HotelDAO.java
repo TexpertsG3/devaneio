@@ -5,6 +5,7 @@ import br.com.hotel.devaneio.model.dto.HotelOutputDTO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -26,6 +27,14 @@ public class HotelDAO {
                 + "INNER JOIN d.endereco e";
         TypedQuery<HotelOutputDTO> query = entityManager.createQuery(jpql, HotelOutputDTO.class);
         return query.getResultList();
+    }
+
+    public Hotel buscaPor(Integer id) {return this.entityManager.find(Hotel.class, id);}
+
+    @Transactional
+    public void delete(Integer id){
+        Hotel hotel = this.entityManager.find(Hotel.class, id);
+        this.entityManager.remove(hotel);
     }
 
 }
