@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:object="${hotelInputDTO}" action="/hotel/persiste" method="post">
+        Nome: <input th:field="*{nome}" /> <span th:errors="*{nome}"></span> <br />
+        Nome: <input th:field="*{nome}" /> <span th:errors="*{nome}"></span> <br />
+        CNPJ: <input th:field="*{cnpj}" /> <span th:errors="*{cnpj}"></span> <br />
+        Email: <input th:field="*{email}" /> <span th:errors="*{email}"></span> <br />
+        Telefone: <input th:field="*{telefone}" /> <span th:errors="*{telefone}"></span> <br />
+        Celular: <input th:field="*{celular}" /> <span th:errors="*{celular}"></span> <br />
+        Rua: <input th:field="*{rua}" /> <span th:errors="*{rua}"></span> <br />
+        Bairro: <input th:field="*{bairro}" /> <span th:errors="*{bairro}"></span> <br />
+        Numero: <input th:field="*{numero}" /> <span th:errors="*{numero}"></span> <br />
+        CEP: <input th:field="*{cep}" /> <span th:errors="*{cep}"></span> <br />
+        Cidade: <input th:field="*{cidade}" /> <span th:errors="*{cidade}"></span> <br />
+        UF: <input th:field="*{uf}" /> <span th:errors="*{uf}"></span> <br />
+        Complemento: <input th:field="*{complemento}" /> <span th:errors="*{cnpj}"></span> <br /> <br />
+        <input type="submit" value="Persiste">
+    </form>
+</body>
+</html>

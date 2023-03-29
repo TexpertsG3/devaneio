@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Hotéis Cadastrados</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>ID</td>
+      <td>Nome</td>
+      <td>CNPJ</td>
+      <td>Email</td>
+      <td>Telefone</td>
+      <td>Celular</td>
+      <td>Rua</td>
+      <td>Bairro</td>
+      <td>Número</td>
+      <td>Cep</td>
+      <td>Cidade</td>
+      <td>UF</td>
+      <td>Complemento</td>
+    </tr>
+    <tr th:each="hotel : ${hoteis}">
+      <td th:text="${hotel.id}"></td>
+      <td th:text="${hotel.nome}"></td>
+      <td th:text="${hotel.cnpj}"></td>
+      <td th:text="${hotel.email}"></td>
+      <td th:text="${hotel.telefone}"></td>
+      <td th:text="${hotel.celular}"></td>
+      <td th:text="${hotel.rua}"></td>
+      <td th:text="${hotel.bairro}"></td>
+      <td th:text="${hotel.numero}"></td>
+      <td th:text="${hotel.cep}"></td>
+      <td th:text="${hotel.cidade}"></td>
+      <td th:text="${hotel.uf}"></td>
+      <td th:text="${hotel.complemento}"></td>
+    </tr>
+  </table>
+</body>
+</html>
