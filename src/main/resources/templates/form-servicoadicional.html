@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro do Hotel</title>
+</head>
+<body>
+
+    <span th:text="${resultado}"></span>
+    <br><br>
+
+    <form th:object="${servicoAdicionalInputDTO}" action="/servicoAdicional/persiste" method="post">
+        Nome: <input th:field="*{nome}" /> <span th:errors="*{nome}"></span> <br />
+        Valor: <input th:field="*{valor}" /> <span th:errors="*{valor}"></span> <br />
+        Hotel: <input th:field="*{hotel}" /> <span th:errors="*{hotel}"></span> <br />
+        <input type="submit" value="Cadastra">
+    </form>
+</body>
+</html>

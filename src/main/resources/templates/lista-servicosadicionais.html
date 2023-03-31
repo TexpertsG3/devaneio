@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Hotéis Cadastrados</title>
+</head>
+<body>
+
+
+<button><a th:href="@{/servicoAdicional/cadastra}">Clique aqui para cadastrar um novo servico adicional.</a></button>
+<br><br>
+
+  <span th:text="${resultado}"></span>
+  <br><br>
+
+  <table th:border="1px">
+    <tr th:bgcolor="grey">
+      <td>ID</td>
+      <td>Nome</td>
+      <td>Valor</td>
+      <td>Hotel</td>
+
+    </tr>
+    <tr th:each="servico : ${servicos}">
+      <td th:text="${servico.id}"></td>
+      <td th:text="${servico.nome}"></td>
+      <td th:text="${servico.preco}"></td>
+      <td th:text="${servico.hotel}"></td>
+      <td><a th:href="@{/servicoAdicional/altera(id=${servico.id})}">Alterar</a></td>
+      <td><a th:href="@{/servicoAdicional/deleta(id=${servico.id})}">Excluir</a></td>
+
+    </tr>
+  </table>
+</body>
+</html>

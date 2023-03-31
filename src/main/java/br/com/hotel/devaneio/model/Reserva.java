@@ -189,7 +189,7 @@ public class Reserva {
     public BigDecimal calculaValorServico(Set<ServicoAdicional> servicos) {
 
         for (ServicoAdicional servico : servicos) {
-            this.totalServicos = this.totalServicos.add(servico.getValorServico());
+            this.totalServicos = this.totalServicos.add(servico.getPreco());
         }
         return this.totalServicos;
     }
@@ -208,7 +208,7 @@ public class Reserva {
         sb.append("\nQuantidade de crianças: " + quantidadeCriancas);
         sb.append("\nServiços adicionais selecionados:\n");
         for (ServicoAdicional servico : servicoAdicional) {
-            sb.append(servico.getNomeServico()).append(" - ");
+            sb.append(servico.getNome()).append(" - ");
         }
         return sb.toString();
     }

@@ -105,7 +105,7 @@ public class Hotel {
     public static BigDecimal somaServicos(List<ServicoAdicional> servicos) {
         BigDecimal resultado = BigDecimal.ZERO;
         for (ServicoAdicional servico : servicos) {
-            resultado = resultado.add(servico.getValorServico());
+            resultado = resultado.add(servico.getPreco());
         }
         return resultado;
     }

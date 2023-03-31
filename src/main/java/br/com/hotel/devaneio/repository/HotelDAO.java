@@ -31,6 +31,7 @@ public class HotelDAO {
 
     public Hotel buscaPor(Integer id) {return this.entityManager.find(Hotel.class, id);}
 
+
     @Transactional
     public void delete(Integer id){
         Hotel hotel = this.entityManager.find(Hotel.class, id);

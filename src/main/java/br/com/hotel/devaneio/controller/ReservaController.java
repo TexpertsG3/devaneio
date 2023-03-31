@@ -1,5 +1,4 @@
 package br.com.hotel.devaneio.controller;
 
-public class CadastraAlojamento {
-
+public class ReservaController {
 }

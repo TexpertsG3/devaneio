@@ -10,60 +10,67 @@ public class ServicoAdicional {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_servico_adicional")
-    private Integer idServico;
+    private Integer id;
     @Column(name = "nome")
-    private String nomeServico;
+    private String nome;
     @Column(name = "preco")
-    private BigDecimal valorServico;
+    private BigDecimal preco;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_hotel")
-    private Hotel idHotel;
+    private Hotel hotel;
 
-    public ServicoAdicional(String nomeServico, BigDecimal valorServico, Hotel idHotel) {
-        this.idHotel = idHotel;
-        this.nomeServico = nomeServico;
-        this.valorServico = valorServico;
+    public ServicoAdicional(String nome, BigDecimal preco, Hotel hotel) {
+        this.hotel = hotel;
+        this.nome = nome;
+        this.preco = preco;
     }
 
     public ServicoAdicional() {
 
     }
 
-    public Hotel getIdHotel() {
-        return idHotel;
+    public ServicoAdicional(Integer id, String nome, BigDecimal preco, Hotel hotel) {
+        this.id = id;
+        this.nome = nome;
+        this.preco = preco;
+        this.hotel = hotel;
     }
 
-    public void setIdHotel(Hotel hotel) {
-        this.idHotel = hotel;
+    public Hotel getHotel() {
+        return hotel;
     }
 
-    public Integer getIdServico() {
-        return idServico;
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
     }
 
-    public void setIdServico(Integer idServico) {
-        this.idServico = idServico;
+    public Integer getId() {
+        return id;
     }
 
-    public String getNomeServico() {
-        return nomeServico;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public BigDecimal getValorServico() {
-        return valorServico;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeServico(String nomeServico) {
-        this.nomeServico = nomeServico;
+    public BigDecimal getPreco() {
+        return preco;
     }
 
-    public void setValorServico(BigDecimal valorServico) {
-        this.valorServico = valorServico;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setPreco(BigDecimal preco) {
+        this.preco = preco;
     }
 
     @Override
     public String toString() {
-        return "\nNome: " + this.nomeServico + "\n" + "Valor - R$" + this.valorServico + "\n";
+        return "\nNome: " + this.nome + "\n" + "Valor - R$" + this.preco + "\n";
     }
 
 }
