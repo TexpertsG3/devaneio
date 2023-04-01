@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hospede</title>
+</head>
+<body>
+
+<span th:text="${hospede}"></span>
+
+<form th:object="${hospede}" th:action="@{/hotel/atualizaHospede}" method="post">
+    <input type="hidden" name="idHospede" th:value="${hospede.idHospede}">
+    Nome: <input name="nome" th:value="*{nome}" /> <span th:errors="*{nome}"></span> <br />
+    sobrenome: <input name="sobrenome" th:value="*{sobrenome}" /> <span th:errors="*{sobrenome}"></span> <br />
+    cpf: <input name="cpf" th:value="*{cpf}" /> <span th:errors="*{cpf}"></span> <br />
+    senha: <input name="senha" th:value="*{senha}" /> <span th:errors="*{senha}"></span> <br />
+    Email: <input name="email" th:value="*{contato.email}" /> <span th:errors="*{contato.email}"></span> <br />
+    Telefone: <input name="telefone" th:value="*{contato.telefone}" /> <span th:errors="*{contato.telefone}"></span> <br />
+    Celular: <input name="celular" th:value="*{contato.celular}" /> <span th:errors="*{contato.celular}"></span> <br />
+    <input type="submit" value="Atualizar!">
+</form>
+</body>
+</html>

@@ -3,7 +3,7 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/hotel_devaneio
     username: root
-    password: root
+    password: i51983489
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: false

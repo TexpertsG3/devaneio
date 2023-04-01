@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospede</title>
+</head>
+<body>
+<form th:object="${hospedeInputDTO}" action="/hotel/persisteHospede" method="post">
+    Nome: <input th:field="*{nome}" /> <span th:errors="*{nome}"></span> <br />
+    sobrenome: <input th:field="*{sobrenome}" /> <span th:errors="*{sobrenome}"></span> <br />
+    cpf: <input th:field="*{cpf}" /> <span th:errors="*{cpf}"></span> <br />
+    senha: <input th:field="*{senha}" /> <span th:errors="*{senha}"></span> <br />
+    email: <input th:field="*{email}" /> <span th:errors="*{email}"></span> <br />
+    telefone: <input th:field="*{telefone}" /> <span th:errors="*{telefone}"></span> <br />
+    celular: <input th:field="*{celular}" /> <span th:errors="*{celular}"></span> <br />
+
+    <input type="submit" value="Cadastrar">
+    <button><a th:href="@{/hotel/listaHospedes}" >Hospedes</a></button>
+</form>
+</body>
+</html>

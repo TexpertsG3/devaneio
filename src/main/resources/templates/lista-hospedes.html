@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Hospede Cadastrados</title>
+</head>
+<body>
+
+
+<button><a th:href="@{/hotel/cadastraHospede}">Clique aqui para cadastrar um novo hospede.</a></button>
+<br><br>
+
+<span th:text="${deletado}"></span>
+<br><br>
+
+<table th:border="1px">
+    <tr th:bgcolor="grey">
+        <td>Nome</td>
+        <td>Sobrenome</td>
+        <td>Cpf</td>
+        <td>Senha</td>
+        <td>Email</td>
+        <td>Telefone</td>
+        <td>Celular</td>
+    </tr>
+    <tr th:each="hospede : ${hospedes}">
+        <td th:text="${hospede.nome}"></td>
+        <td th:text="${hospede.sobrenome}"></td>
+        <td th:text="${hospede.cpf}"></td>
+        <td th:text="${hospede.senha}"></td>
+        <td th:text="${hospede.email}"></td>
+        <td th:text="${hospede.telefone}"></td>
+        <td th:text="${hospede.celular}"></td>
+        <td><a th:href="@{/hotel/updateHospede(id=${hospede.idHospede})}">Alterar</a></td>
+        <td><a th:href="@{/hotel/deletaHospede(id=${hospede.idHospede})}">Excluir</a></td>
+    </tr>
+</table>
+</body>
+</html>

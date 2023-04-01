@@ -18,7 +18,8 @@
         Cidade: <input th:field="*{cidade}" /> <span th:errors="*{cidade}"></span> <br />
         UF: <input th:field="*{uf}" /> <span th:errors="*{uf}"></span> <br />
         Complemento: <input th:field="*{complemento}" /> <span th:errors="*{cnpj}"></span> <br /> <br />
-        <input type="submit" value="Persiste">
+        <input type="submit" value="Cadastrar">
+        <button><a th:href="@{/hotel/lista}" >Lista de hotéis</a></button>
     </form>
 </body>
 </html>

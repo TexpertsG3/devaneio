@@ -8,9 +8,8 @@ import java.util.Objects;
 @Table(name = "hospede")
 public class Hospede {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_hospede")
-    private Integer idHospede;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long idHospede;
     @Column(name = "nome")
     private String nome;
     @Column(name = "sobrenome")
@@ -22,31 +21,31 @@ public class Hospede {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_contato")
     private Contato contato;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_hotel")
-    private Hotel hotel;
 
-    public Hospede(Integer idHospede) {
+    public Hospede(Long idHospede) {
         this.idHospede = idHospede;
     }
 
-    public Hospede(String nome, String sobrenome, String cpf, String senha, Hotel hotel) {
-        this.hotel = hotel;
+    public Hospede(String nome, String sobrenome, String cpf, String senha, Contato contato) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.cpf = cpf;
         this.senha = senha;
+        this.contato = contato;
+    }
+
+    public Hospede(String nome, String sobrenome, String cpf, String senha) {
+
     }
 
     public Hospede() {
-
     }
 
-    public Integer getIdHospede() {
+    public Long getIdHospede() {
         return idHospede;
     }
 
-    public void setIdHospede(Integer idHospede) {
+    public void setIdHospede(Long idHospede) {
         this.idHospede = idHospede;
     }
 
@@ -82,12 +81,12 @@ public class Hospede {
         this.senha = senha;
     }
 
-    public Hotel getHotel() {
-        return hotel;
+    public Contato getContato() {
+        return contato;
     }
 
-    public void setHotel(Hotel hotel) {
-        this.hotel = hotel;
+    public void setContato(Contato contato) {
+        this.contato = contato;
     }
 
     @Override

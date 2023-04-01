@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/hotel")
@@ -40,7 +39,11 @@ public class HotelController {
     private HotelDAO hotelDAO;
 
 
-
+    @GetMapping("/home")
+    public String home(){
+        System.out.println("home");
+        return "hotel-home";
+    }
     @GetMapping("/cadastra")
     public String cadastra(Model model, HotelInputDTO hotelInputDTO) {
         model.addAttribute("hotelInputDTO", hotelInputDTO);
